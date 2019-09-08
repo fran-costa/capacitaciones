@@ -1,2 +1,3 @@
 - [Introducción](README.md)
 - [JSX](topics/JSX.md)
+- [Renderizado de elementos](topics/Renderizado.md)
