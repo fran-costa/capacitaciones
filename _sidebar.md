@@ -2,3 +2,4 @@
 - [JSX](topics/JSX.md)
 - [Renderizado de elementos](topics/Renderizado.md)
 - [Componentes y propiedades](topics/Componentes.md)
+  - [Verificación de tipos con PropTypes](topics/PropTypes.md)
