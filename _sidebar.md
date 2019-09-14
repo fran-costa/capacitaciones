@@ -5,3 +5,4 @@
   - [Verificación de tipos con PropTypes](topics/PropTypes.md)
   - [Prop children](topics/Children.md)
 - [Estado de un componente](topics/Estado.md)
+- [Manejo de eventos](topics/Eventos.md)
