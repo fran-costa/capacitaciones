@@ -7,3 +7,4 @@
 - [Estado de un componente](topics/Estado.md)
 - [Manejo de eventos](topics/Eventos.md)
 - [Renderizado condicional](topics/Condicional.md)
+- [Listas y claves (keys)](topics/Listas.md)
