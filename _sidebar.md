@@ -12,3 +12,4 @@
 - [Hooks](topics/Hooks.md)
   - [Hook de estado](topics/useState.md)
   - [Hook de efecto](topics/useEffect.md)
+  - [Reglas](topics/Reglas.md)
