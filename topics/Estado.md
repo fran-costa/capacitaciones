@@ -258,3 +258,14 @@ El componente `FormattedDate` recibiría `date` en sus props y no sabría si vin
 A esto se le llama flujo de datos **descendente** o **unidireccional**. Cualquier estado siempre es propiedad de algún componente específico, y cualquier dato o interfaz de usuario derivados de ese estado solo pueden afectar los componentes debajo de ellos en el árbol.
 
 > En las aplicaciones de React, si un componente tiene o no estado se considera un detalle de implementación del componente que puede cambiar con el tiempo. Puedes usar componentes sin estado dentro de componentes con estado y viceversa.
+
+## Ejercicio:
+A partir del ejemplo de **Clock** como functional component vamos a realizar las siguientes tareas:
+
+- Crear una class component para **Clock**
+- En lugar de usar una prop para `date` vamos a usar un `state`
+- Con los metodos del ciclo de vida vamos a hacer que el **Clock** se actualice cada 1 segundo
+
+Links:
+- Sin resolver: https://codesandbox.io/s/twilight-architecture-g0v2x
+- Resuelto: ...

@@ -117,3 +117,9 @@ function withdraw(account, amount) {
 La única regla estricta en React es:
 
 > Todos los componentes de React deben actuar como funciones puras con respecto a sus props.
+
+## Ejercicio:
+A partir de una componente **Comment** con mucho jsx y props, vamos a crear componentes mas chicos en donde cada uno tenga funcionalidad por si mismo y solo requiera las props que utiliza.
+
+- Sin resolver: https://codesandbox.io/s/componentes-oyw7z
+- Resuelto: https://codesandbox.io/s/componentes-lbuee

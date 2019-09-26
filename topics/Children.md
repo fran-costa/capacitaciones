@@ -38,3 +38,11 @@ class ParentComponent extends React.Component {
   }
 }
 ```
+
+## Ejercicio:
+A partir de lo trabajado en `Verificación de tipos con PropTypes` vamos a agregarle un ejemplo con uso de la prop children.
+Para esto vamos a hacer que el componente **Comment** tenga un titulo y un contenido.
+El contenido va a ser un prop children para que podamos crear comentarios con tipo **CommentData** y **Reaction**.
+
+- Sin resolver: ...
+- Resuelto: ...

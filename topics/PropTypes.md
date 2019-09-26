@@ -145,3 +145,9 @@ ReactDOM.render(
 ```
 
 `defaultProps` se usa para asegurar que `this.props.name` tenga un valor si no fue especificado por el componente padre. La verificación de tipo de `propTypes` sucede después de resolver `defaultProps`, así que la verificación de tipos también se aplica a `defaultProps`.
+
+## Ejercicio:
+A partir de lo trabajado en `Componentes y Propiedades` vamos a agregarle validaciones a todas las componentes (tanto tipos como defaults en el caso que se requiera)
+
+- Sin resolver: https://codesandbox.io/s/componentes-lbuee
+- Resuelto: ...
