@@ -4,6 +4,7 @@
 - [Componentes y propiedades](topics/Componentes.md)
   - [Verificación de tipos con PropTypes](topics/PropTypes.md)
   - [Prop children](topics/Children.md)
+- [Composición](topics/Composicion.md)
 - [Estado de un componente](topics/Estado.md)
 - [Manejo de eventos](topics/Eventos.md)
 - [Renderizado condicional](topics/Condicional.md)
