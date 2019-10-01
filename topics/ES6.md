@@ -192,14 +192,18 @@ Number.isFinite(123) === true
 Representación de primera clase de un valor que puede realizarse de forma asíncrona y estar disponible en el futuro.
 
 ```javascript
-function msgAfterTimeout(msg, who, timeout) {
+function getMessage(msg) {
+  console.log(msg);
+  return msg;
+};
+
+function msgAfterTimeout(msg, seconds) {
   return new Promise((resolve, reject) => {
-    setTimeout(() => resolve(`${msg} Hello ${who}!`), timeout)
+    setTimeout(() => resolve(getMessage(msg)), seconds * 1000)
   })
-}
-msgAfterTimeout("", "Foo", 100).then((msg) =>
-  msgAfterTimeout(msg, "Bar", 200)
-).then((msg) => {
-  console.log(`done after 300ms:${msg}`)
-})
+};
+
+msgAfterTimeout("First Message", 3)
+  .then(msg => msgAfterTimeout('Second Message', 2))
+  .then(msg => console.log('done', msg));
 ```
