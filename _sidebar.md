@@ -16,3 +16,5 @@
   - [Hook de efecto](topics/useEffect.md)
   - [Reglas](topics/Reglas.md)
   - [Hooks personalizados](topics/Personalizados.md)
+---
+- [ES6](topics/ES6.md)
