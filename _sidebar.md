@@ -11,6 +11,7 @@
 - [Renderizado condicional](topics/Condicional.md)
 - [Listas y claves (keys)](topics/Listas.md)
 - [Formularios](topics/Formularios.md)
+- [Higher Order Components](topics/HOC.md)
 - [Hooks](topics/Hooks.md)
   - [Hook de estado](topics/useState.md)
   - [Hook de efecto](topics/useEffect.md)
