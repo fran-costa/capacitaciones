@@ -12,6 +12,7 @@
 - [Listas y claves (keys)](topics/Listas.md)
 - [Formularios](topics/Formularios.md)
 - [Referencias](topics/Ref.md)
+- [Componentes no controlados](topics/No_controlados.md)
 - [Higher Order Components](topics/HOC.md)
 - [Hooks](topics/Hooks.md)
   - [Hook de estado](topics/useState.md)
