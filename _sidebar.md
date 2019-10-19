@@ -20,5 +20,6 @@
   - [Hook de efecto](topics/useEffect.md)
   - [Reglas](topics/Reglas.md)
   - [Hooks personalizados](topics/Personalizados.md)
+  - [Otros Hooks de React](topics/API_Hooks.md)
 ---
 - [ES6](topics/ES6.md)
