@@ -50,6 +50,109 @@ Esto es un detalle no menor respecto a `useEffect` que implica necesariamente qu
 
 A parte de `useState` y `useEffect`, React provée otros Hooks adicionales para cubrir determinadas situaciones. Veamos a continuación una lista con estos hooks.
 
+## useContext
+
+```javascript
+const value = useContext(MyContext);
+```
+
+Acepta un objeto de contexto (el valor devuelto de `React.createContext`) y devuelve el valor de contexto actual. El valor actual del contexto es determinado por la propiedad value del `Provider` más cercano (ascendentemente) del contexto.
+
+Cuando el `Provider` más cercano del contexto se actualiza, el Hook activa una renderización con el `value` del contexto del `Provider`.
+
+> **Nota:**  `useContext(MyContext)` es el equivalente a `static contextType = MyContext` en un componente de clase o a `<MyContext.Consumer>`, es decir que solo permite leer el contexto y suscribirte a sus cambios. Sigue siendo necesario contar con un `Provider` para el contexto para proveer el valor para el mismo.
+
+## useReducer
+
+```javascript
+const [state, dispatch] = useReducer(reducer, initialArg, init);
+```
+
+Una alternativa a `useState`. Acepta un reducer de tipo `(state, action) => newState` y devuelve el estado actual junto con un método `dispatch`.
+
+`useReducer` es preferible a `useState` cuando se tiene una lógica compleja que involucra múltiples subvalores o cuando el próximo estado depende del anterior. `useReducer` además te permite optimizar el rendimiento para componentes que activan actualizaciones profundas, porque puedes pasar hacia abajo `dispatch` en lugar de callbacks.
+
+Veamos el ejemplo del contador visto en [Hook de estado](topics/useState.md), ahora usando `useReducer`:
+
+```javascript
+const initialState = { count: 0 };
+
+function reducer(state, action) {
+  switch (action.type) {
+    case 'increment':
+      return { count: state.count + 1 };
+    case 'decrement':
+      return { count: state.count - 1 };
+    default:
+      throw new Error();
+  }
+}
+
+function Counter() {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  return (
+    <>
+      Count: {state.count}
+      <button onClick={() => dispatch({type: 'decrement'})}>-</button>
+      <button onClick={() => dispatch({type: 'increment'})}>+</button>
+    </>
+  );
+}
+```
+
+#### Especificación del estado inicial
+
+Hay dos formas de inicializar el estado de `useReducer`. La más simple es inicializarlo pasando un segundo argumento:
+
+```javascript
+const [state, dispatch] = useReducer(
+  reducer,
+  { count: initialCount }
+);
+```
+
+También es posible crear el estado inicial de manera diferida. Para hacerlo, se debe pasar una función `init` como tercer argumento de `useReducer`. El estado inicial será establecido como `init(initialArg)`.
+
+Esto te permite extraer la lógica para calcular el estado inicial fuera del reducer. También es útil para reiniciar el estado luego en respuesta a una acción:
+
+```javascript
+function init(initialCount) {
+  return {count: initialCount};
+}
+
+function reducer(state, action) {
+  switch (action.type) {
+    case 'increment':
+      return {count: state.count + 1};
+    case 'decrement':
+      return {count: state.count - 1};
+    case 'reset':
+      return init(action.payload);
+    default:
+      throw new Error();
+  }
+}
+
+function Counter({initialCount}) {
+  const [state, dispatch] = useReducer(reducer, initialCount, init);
+  return (
+    <>
+      Count: {state.count}
+      <button
+        onClick={() => dispatch({type: 'reset', payload: initialCount})}>
+
+        Reset
+      </button>
+      <button onClick={() => dispatch({type: 'decrement'})}>-</button>
+      <button onClick={() => dispatch({type: 'increment'})}>+</button>
+    </>
+  );
+}
+```
+
+> **Nota:** Si devuelves el mismo valor del estado actual desde un Hook reductor, React evitará renderizar los hijos y disparar efectos.
+
 ## useCallback
 
 ```javascript
