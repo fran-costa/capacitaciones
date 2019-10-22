@@ -1,4 +1,52 @@
-# Otros Hooks de React
+# API de Hooks
+
+## useState
+
+```javascript
+const [state, setState] = useState(initialState);
+```
+
+Adicionalmente a lo visto en [Hook de estado](topics/useState.md), la API de `useState` presenta algunas características adicionales que son interesantes de remarcar:
+
+#### Actualizaciones funcionales
+
+Si el nuevo estado se calcula utilizando el estado anterior, es posible pasar una función a `setState`. La función recibirá el valor anterior y devolverá un valor actualizado.
+
+```javascript
+function Counter({initialCount}) {
+  const [count, setCount] = useState(initialCount);
+  return (
+    <>
+      Count: {count}
+      <button onClick={() => setCount(initialCount)}>Reset</button>
+      <button onClick={() => setCount(prevCount => prevCount - 1)}>-</button>
+      <button onClick={() => setCount(prevCount => prevCount + 1)}>+</button>
+    </>
+  );
+}
+```
+
+Los botones ”+” y ”-” usan la forma funcional, porque el valor actualizado se basa en el valor anterior. Pero el botón “Reset” usa la forma normal, porque siempre vuelve a establecer la cuenta al valor inicial.
+
+#### Inicialización gradual
+
+El argumento `initialState` es el estado utilizado durante el render inicial. En renderizados posteriores, se ignora. Si el estado inicial es el resultado de un cálculo costoso, puede proporcionar una función en su lugar, que se ejecutará solo en el render inicial:
+
+```javascript
+const [state, setState] = useState(() => getInitialState(props));
+```
+
+## useEffect
+
+```javascript
+useEffect(didUpdate);
+```
+
+De lo visto en [Hook de efecto](topics/useEffect.md), resulta interesante remarcar el hecho de que `useEffect` se ejecuta en forma asíncrona. Esto quiere decir que los effects se ejecutan luego de que el navegador haya renderizado la UI actualizada. Por su parte, los effects de un render anterior se eliminan antes de comenzar una nueva actualización.
+
+Esto es un detalle no menor respecto a `useEffect` que implica necesariamente que no es posible aplicar effects que impliquen mutaciones en el DOM en forma sincrónica. Para esta necesidad, React nos ofrece un Hook específico muy similar a `useEffect`, llamado [`useLayoutEffect`](topics/API_Hooks?id=uselayouteffect).
+
+---
 
 A parte de `useState` y `useEffect`, React provée otros Hooks adicionales para cubrir determinadas situaciones. Veamos a continuación una lista con estos hooks.
 
