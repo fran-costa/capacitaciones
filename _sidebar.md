@@ -15,6 +15,7 @@
 - [Componentes no controlados](topics/No_controlados.md)
 - [Higher Order Components](topics/HOC.md)
 - [Render Props](topics/Render_Props.md)
+- [Context](topics/Context.md)
 - [Hooks](topics/Hooks.md)
   - [Hook de estado](topics/useState.md)
   - [Hook de efecto](topics/useEffect.md)
