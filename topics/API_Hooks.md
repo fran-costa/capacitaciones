@@ -281,5 +281,3 @@ En algunos casos, formatear un valor para mostrar puede ser una operación costo
 ```javascript
 useDebugValue(date, date => date.toDateString());
 ```
-
-> **Nota:** En esta lista no se han incluído dos Hooks adicionales llamados `useContext` y `useReducer` que viene incluídos en React. Los mismos se verán en las siguientes secciones de este curso como parte de las APIs en las cuales se utilizan.
