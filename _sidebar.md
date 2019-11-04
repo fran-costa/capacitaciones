@@ -22,5 +22,6 @@
   - [Reglas](topics/Reglas.md)
   - [Hooks personalizados](topics/Personalizados.md)
   - [API de Hooks](topics/API_Hooks.md)
+- [Error Boundaries](topics/Error_Boundaries.md)
 ---
 - [ES6](topics/ES6.md)
